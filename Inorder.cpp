@@ -13,7 +13,7 @@ struct Node {
 };
 */
 
-// Storing preorder in vector in
+// Storing Inorder in vector in
 vector<int> in;
 
 void inorder(Node* root) {
