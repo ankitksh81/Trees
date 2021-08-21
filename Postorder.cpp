@@ -13,7 +13,7 @@ struct Node {
 };
 */
 
-// Storing Postorder in vector in
+// Storing Postorder in vector post
 vector<int> post;
 
 void postorder(Node* root) {
