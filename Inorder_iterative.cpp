@@ -17,9 +17,21 @@ struct Node {
 vector<int> in;
 
 void inorder(Node* root) {
-	if(root == nullptr) {
-		return in;
-	}
+	stack<Node*> st;
+	Node* node = root;
 
-	
+	while(true) {
+		if(node != nullptr) {
+			st.push(node);
+			node = node->left;
+		}
+		else {
+			if(st.empty())
+				break;
+			node = st.top();
+			st.pop();
+			in.push_back(node->val);
+			node = node->right;
+		}
+	}	
 }
