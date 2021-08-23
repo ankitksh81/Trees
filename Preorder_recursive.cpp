@@ -2,14 +2,14 @@
 
 /* Node definition
 struct Node {
-	int val;
-	Node *left;
-	Node *right;
+    int val;
+    Node *left;
+    Node *right;
 
-	Node(int data) {
-		val = data;
-		left = right = NULL;
-	}
+    Node(int data) {
+        val = data;
+        left = right = NULL;
+    }
 };
 */
 
@@ -17,11 +17,11 @@ struct Node {
 vector<int> pre;
 
 void preorder(Node* root) {
-	if(root == nullptr) {
-		return;
-	}
+    if(root == nullptr) {
+        return;
+    }
 
-	pre.push_back(root->val);
-	preorder(root->left);
-	preorder(root->right);
+    pre.push_back(root->val);
+    preorder(root->left);
+    preorder(root->right);
 }

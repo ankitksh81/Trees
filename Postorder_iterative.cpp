@@ -40,3 +40,33 @@ void postorder(Node* root) {
         st2.pop();
     }
 }
+
+// using 1 stack
+void postorder(Node* root) {
+    Node* cur = root, temp;
+    stack<Node*> st;
+
+    while(cur != nullptr || !st.empty()) {
+        if(cur != nullptr) {
+            st.push(cur);
+            cur = cur->left;
+        }
+        else {
+            temp = st.top()->right;
+            if(temp == nullptr) {
+                temp = st.top();
+                st.pop();
+                post.push_back(temp->val);
+
+                while(!st.empty() && temp == st.top()->right) {
+                    temp = st.top();
+                    st.pop();
+                    post.push_back(temp->val);
+                }
+            }
+            else {
+                cur = temp;
+            }
+        }
+    }
+}

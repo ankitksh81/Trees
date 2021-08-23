@@ -2,14 +2,14 @@
 
 /* Node definition
 struct Node {
-	int val;
-	Node *left;
-	Node *right;
+    int val;
+    Node *left;
+    Node *right;
 
-	Node(int data) {
-		val = data;
-		left = right = NULL;
-	}
+    Node(int data) {
+        val = data;
+        left = right = NULL;
+    }
 };
 */
 
@@ -17,21 +17,21 @@ struct Node {
 vector<int> in;
 
 void inorder(Node* root) {
-	stack<Node*> st;
-	Node* node = root;
+    stack<Node*> st;
+    Node* node = root;
 
-	while(true) {
-		if(node != nullptr) {
-			st.push(node);
-			node = node->left;
-		}
-		else {
-			if(st.empty())
-				break;
-			node = st.top();
-			st.pop();
-			in.push_back(node->val);
-			node = node->right;
-		}
-	}	
+    while(true) {
+        if(node != nullptr) {
+            st.push(node);
+            node = node->left;
+        }
+        else {
+            if(st.empty())
+                break;
+            node = st.top();
+            st.pop();
+            in.push_back(node->val);
+            node = node->right;
+        }
+    }   
 }
