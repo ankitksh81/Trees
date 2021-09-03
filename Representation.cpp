@@ -12,6 +12,16 @@ struct Node {
     }
 };
 
+// 2nd definition
+struct TreeNode {
+    int val;
+    TreeNode *left;
+    TreeNode *right;
+    TreeNode() : val(0), left(nullptr), right(nullptr) {}
+    TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+    TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+ };
+
 int main() {
     Node *root = new Node(1); // Node creation
     root->left = new Node(2);
