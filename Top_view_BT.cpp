@@ -29,7 +29,7 @@ vector<int> topView(TreeNode* root) {
         int line = it.second;
 
         if(mp.find(line) == mp.end()) {
-            mp[line] = node->data;
+            mp[line] = node->val;
         }
         
         if(node->left != nullptr) {
