@@ -67,3 +67,31 @@ vector<int> rightSideView(TreeNode* root) {
 
     return ans;
 }
+
+
+// java Recursive different logic 
+
+public List<Integer> rightSideView(TreeNode root) {
+         List<Integer>al=new ArrayList<Integer>();
+         int maxlevel[] = new int [1];
+         maxlevel[0] = 0;
+         
+         rightView(root,al,maxlevel,1);
+         return al;  
+     }
+    
+    public void rightView(TreeNode root, List<Integer>al , int maxlevel[] ,int level)
+    {
+        if(root == null)
+            return;
+        
+        if(maxlevel[0] < level)
+        {
+            al.add(root.val);
+            maxlevel[0] = level;
+        }
+        
+        rightView(root.right , al ,maxlevel,level+1);
+        rightView(root.left , al ,maxlevel, level+1);
+            
+    }
